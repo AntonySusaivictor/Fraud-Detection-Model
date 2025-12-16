@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import pickle
 
-model = joblib.load("Fraud_Detection_Model.pkl")
+with open("Fraud_Detection_Model.pkl", "rb") as f:
+    model = pickle.load(f)
+
 st.title("Fraud_Detector_APP")
 st.markdown("please enter the transaction details to find the fraud")
 
